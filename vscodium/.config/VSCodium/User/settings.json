@@ -1,0 +1,73 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.fontSize": 16,
+    "editor.tabSize": 2,
+    "liveServer.settings.CustomBrowser": "brave",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "terminal.integrated.fontFamily": "Fira Code, FontAwesome",
+    "terminal.integrated.fontSize": 16,
+    "window.zoomLevel": 0,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.fullReload": true,
+    "liveSassCompile.settings.generateMap": false,
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "./dist/css"
+        }
+    ],
+    "editor.wordWrap": "on",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "liveServer.settings.ChromeDebuggingAttachment": false,
+    "liveServer.settings.ignoreFiles": [
+        ".vscode/**",
+        "**/*.scss",
+        "**/*.sass",
+        "**/*.ts"
+    ],
+    "workbench.iconTheme": "material-icon-theme",
+    "prettier.useTabs": true,
+    "workbench.colorTheme": "Nord",
+    "code-runner.preserveFocus": false,
+    "code-runner.runInTerminal": true,
+    "code-runner.saveAllFilesBeforeRun": true,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.clearPreviousOutput": true,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "vim.easymotion": true,
+    "editor.fontFamily": " JetBrains Mono Medium,Fira Code,FontAwesome",
+    "editor.renameOnType": true,
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+    "launch": {
+
+        "configurations": [],
+        "compounds": []
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "diffEditor.renderSideBySide": false,
+    "eslint.alwaysShowStatus": true,
+    "eslint.format.enable": true,
+    "eslint.lintTask.enable": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "[haskell]": {
+        "editor.defaultFormatter": "haskell.haskell"
+    }
+}

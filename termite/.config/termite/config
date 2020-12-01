@@ -1,0 +1,75 @@
+#__________________________________________________________
+#__________________________________________________________
+###########################################################
+#######    __  __                                   #######
+#######   |  \/  |                                  #######
+#######   | \  / | __ _ _ __  _______   ___  _ __   #######
+#######   | |\/| |/ _` | '_ \|_  / _ \ / _ \| '__|  #######
+#######   | |  | | (_| | | | |/ / (_) | (_) | |     #######
+#######   |_|  |_|\__,_|_| |_/___\___/ \___/|_|     #######
+#######       /\   | |                      | |     #######
+#######      /  \  | |__  _ __ ___   ___  __| |     #######
+#######     / /\ \ | '_ \| '_ ` _ \ / _ \/ _` |     #######
+#######    / ____ \| | | | | | | | |  __/ (_| |     #######
+#######   /_/    \_\_| |_|_| |_| |_|\___|\__,_|     #######
+###########################################################
+#----------------------Follow Me--------------------------#
+#website: https://www.manzoorsblog.tk/                    #
+#Twitter:https://twitter.com/_MANZOOR_AHMED               #
+#Reddit: https://www.reddit.com/user/manzoorahmedmunawar  #
+#Github: https://github.com/manzoorahmedmunawar           #
+###########################################################
+#__________________________________________________________
+#__________________________________________________________
+[options]
+allow_bold = true
+#audible_bell = false
+bold_is_bright = true
+#cell_height_scale = 1.0
+#cell_width_scale = 1.0
+clickable_url = true
+#dynamic_title = true
+font = Jetbrains Mono 12
+#fullscreen = true
+#icon_name = terminal
+#mouse_autohide = false
+#scroll_on_output = false
+#scroll_on_keystroke = true
+scrollback_lines = 10000
+#search_wrap = true
+#urgent_on_bell = true
+hyperlinks = true
+browser = xdg-open
+cursor_blink = system
+cursor_shape = block
+#filter_unmatched_urls = true
+#modify_other_keys = false
+#size_hints = false
+scrollbar = off
+
+[colors]
+cursor = #d8dee9
+cursor_foreground = #2e3440
+
+foreground = #d8dee9
+foreground_bold = #d8dee9
+background = rgba(0,0,0,0.7)
+
+highlight = #4c566a
+
+color0  = #3b4252
+color1  = #bf616a
+color2  = #a3be8c
+color3  = #ebcb8b
+color4  = #81a1c1
+color5  = #b48ead
+color6  = #88c0d0
+color7  = #e5e9f0
+color8  = #4c566a
+color9  = #bf616a
+color10 = #a3be8c
+color11 = #ebcb8b
+color12 = #81a1c1
+color13 = #b48ead
+color14 = #8fbcbb
+color15 = #eceff4
