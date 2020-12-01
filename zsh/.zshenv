@@ -1,20 +1,24 @@
 typeset -U PATH path
-path=( "/bin" "/usr/bin" "/usr/local/bin" "$HOME/.local/bin" "$HOME/software/scripts/statusbar" "$HOME/software/scripts/lf" "$HOME/software/scripts/dmenu" "$HOME/software/scripts" "$HOME/software/scripts/util")
+path=( "/bin" "/usr/bin" "/usr/local/bin" "$HOME/.local/bin" "$HOME/Software/scripts/statusbar" "$HOME/Software/scripts/lf" "$HOME/Software/scripts/dmenu" "$HOME/Software/scripts" "$HOME/Software/scripts/util" "$HOME/.npm-global/")
 export PATH
+
+export PATH="$HOME/.npm-global/bin:$PATH"
+export NPM_CONFIG_PREFIX=~/.npm-global
 
 export WINIT_HIDPI_FACTOR=1.0
 export EDITOR="vim"
-export READER="zathura"
+export READER="evince"
 export VISUAL="vim"
-export TERMINAL="st"
-export FILE="lf"
-export BROWSER="firefox-developer-edition"
+export TERMINAL="alacritty"
+export TFILE="lf"
+export GFILE="pcmanfm"
+export BROWSER="brave"
 export VIDEO="mpv"
 export IMAGE="sxiv"
 export COLORTERM="truecolor"
 export OPENER="xdg-open"
 export PAGER="less"
-export WM="dwm"
+export WM="bspwm"
 
 export LF_ICONS="\
 di=:\
