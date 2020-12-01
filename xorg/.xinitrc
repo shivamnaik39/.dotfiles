@@ -1,85 +1,59 @@
-#!/bin/sh
 
-userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
-sysresources=/etc/X11/xinit/.Xresources
-sysmodmap=/etc/X11/xinit/.Xmodmap
+# Find out your monitor name with xrandr or arandr (save and you get this line)
+$HOME/.screenlayout/monitor.sh &
 
-# merge in defaults and keymaps
+# Launch Polybar
+#$HOME/.config/polybar/launch.sh &
 
-if [ -f $sysresources ]; then
+# change your keyboard if you need it
+#setxkbmap -layout be
 
+# Set wallpaper
+nitrogen --restore &
 
+# run simple X hot key daemon (sxhkd) bind keys
+#sxhkd &
 
-
-
-
-
-    xrdb -merge $sysresources
-
-fi
-
-if [ -f $sysmodmap ]; then
-    xmodmap $sysmodmap
-fi
-
-if [ -f "$userresources" ]; then
-
-
-
-
-
-
-
-    xrdb -merge "$userresources"
-
-fi
-
-if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
-fi
-
-# start some nice programs
-
-if [ -d /etc/X11/xinit/xinitrc.d ] ; then
- for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-  [ -x "$f" ] && . "$f"
- done
- unset f
-fi
+# run compositor
+picom &
 
 #Policy kit daemon
 /usr/bin/lxpolkit &
-
-#Bind keys
-sxhkd &
 
 #dwm status
 #/home/$USER/.config/dwm-status/dwm-status.sh &
 
 #dwm blocks
-dwmblocks &
+#dwmblocks &
 
 #slstatus
 #slstatus &
 
-#keyboard layout
-#setxkbmap us &
-
-#Display Resolution
-xrandr --output eDP  --mode 1366x768 & 
-
-#Compositor
-picom -f &
-
-#wallpaper
-nitrogen --restore &
-
 #dunst notification daemon
-dust &
+dunst &
+
+# flameshot screen shot tool
+#flameshot &
+
+# netwoek manager applet
+#nm-applet &
 
 # screen locker
-xautolock -time 5 -locker "betterlockscreen -l dim --off 5" -detectsleep &
+xautolock -time 5 -locker "betterlockscreen -l dim --off 60" &
 
-#Execute DWM
-exec dwm
+# fix cursor (bspwm)
+xsetroot -cursor_name left_ptr & 
+
+#xmodmap ~/.Xmodmap &
+
+# Start DWM
+#exec dwm
+
+# Start BSPWM
+exec bspwm
+
+# Start Xmonad
+#exec xmonad
+
+# Start Qtile
+#exec qtile
