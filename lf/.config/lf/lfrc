@@ -3,7 +3,7 @@ set preview true
 set previewer ~/scripts/lf/preview
 #set previewer pistol
 #set hidden false
-set color256 true
+#set color256 true
 set drawbox true
 set icons true
 set ignorecase true
@@ -186,22 +186,31 @@ map U unselect
 # Movement
 map gtr cd ~/.local/share/Trash/files
 
-map gv. cd ~/videos
-map ged cd ~/videos/education
-map gven cd ~/videos/entertainment
-map gme cd ~/videos/entertainment/movies/english
-map gmh cd ~/videos/entertainment/movies/hindi
+map gv. cd ~/Videos
+map gved cd ~/Videos/education
+map gven cd ~/Videos/entertainment
+map gvme cd ~/Videos/entertainment/movies/english
+map gvmh cd ~/Videos/entertainment/movies/hindi
+map gva  cd ~/Videos/entertainment/anime
 
-map gp. cd ~/pictures
-map gps cd ~/pictures/screenshots
-map gw. cd ~/pictures/wallpapers
+map gp. cd ~/Pictures
+map gps cd ~/Pictures/screenshots
+map gw. cd ~/Pictures/wallpapers
 
 
-map gD cd ~/downloads
-map ge cd ~/desktop
+map gD cd ~/Downloads
+map ge cd ~/Desktop
 
-map gs. cd ~/software/scripts
-map gsl cd ~/software/scripts/lf
+map gsr. cd ~/Software/scripts
+map gs. cd ~/Software/
+map gsd. cd ~/Software/dev/
+map gsdcl cd ~/Software/dev/client 
+map gsdco cd ~/Software/dev/collab 
+map gsdin cd ~/Software/dev/intern 
+map gsdcps cd ~/Software/dev/personal 
+map gsdpr cd ~/Software/dev/practise
+map gsdwb cd ~/Software/dev/personal/web 
+map gsl cd ~/Software/scripts/lf
 
 map gdwm cd ~/.config/dwm
 map gst cd ~/.config/st
