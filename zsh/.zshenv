@@ -6,7 +6,7 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 export NPM_CONFIG_PREFIX=~/.npm-global
 
 export WINIT_HIDPI_FACTOR=1.0
-export EDITOR="vim"
+export EDITOR="nvim"
 export READER="evince"
 export VISUAL="vim"
 export TERMINAL="alacritty"
@@ -181,6 +181,7 @@ ex=:\
 *.pdf=:\
 *.nix=:\
 "
+
 export FFF_TRASH_CMD="trash-put"
 export FFF_TRASH=~/.local/share/Trash/files
 export FFF_KEY_MKDIR="f"

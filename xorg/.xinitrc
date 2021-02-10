@@ -15,7 +15,7 @@ nitrogen --restore &
 #sxhkd &
 
 # run compositor
-picom &
+picom --experimental-backends &
 
 #Policy kit daemon
 /usr/bin/lxpolkit &
@@ -37,6 +37,11 @@ dunst &
 
 # netwoek manager applet
 #nm-applet &
+
+# blue light filter (redshift)
+redshift &
+
+$HOME/.test &
 
 # screen locker
 xautolock -time 5 -locker "betterlockscreen -l dim --off 60" &

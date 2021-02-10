@@ -74,33 +74,16 @@ bspc rule -a robo3t desktop='^4' follow=on
 bspc rule -a Postman desktop='^5' follow=on 
 bspc rule -a Gimp desktop='^6' follow=on 
 bspc rule -a Inkscape desktop='^6' follow=on
-bspc rule -a libreoffice-writer desktop='^7' follow=on
+bspc rule -a libreoffice desktop='^7' follow=on
 bspc rule -a Pcmanfm desktop='^8' follow=on
 bspc rule -a Thunar desktop='^8' follow=on
 bspc rule -a Pamac-manager desktop='^9' follow=on
-bspc rule -a persepolis desktop='^10'
+bspc rule -a persepolis desktop='^10' follow=on
 
 # fullscreen applications
 bspc rule -a Sxiv state=fullscreen
 bspc rule -a mpv state=fullscreen
+bspc rule -a Zathura state=fullscreen
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# floating application
+bspc rule -a gimp floating=on
