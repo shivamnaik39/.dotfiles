@@ -1,18 +1,21 @@
 # Basic binds
-#
+
 #Terminal Emulator
 super + Return
 	$TERMINAL
 
 #menu
-super + d
+super + alt + d
 	dmenu_run -fn "JetBrains Mono Medium-10"
+
+super + d
+	$HOME/Software/scripts/rofi/launcher
 
 #File Manager
 super + r
 	$TERMINAL -e $TFILE
 
-#Applications
+# ---------------------------- Applications ---------------------------------------------
 
 #Web Browsers
 super + alt + w
@@ -48,7 +51,7 @@ super + alt + n
 	 toggle nm-applet
 
 super + c
-	$TERMINAL -e calcurse
+	rofi -show calc -modi calc -no-show-match -no-sort -theme $HOME/.config/rofi/launcher/style.rasi
 
 #emoji support
 alt + e 
@@ -56,7 +59,7 @@ alt + e
 
 # logout menu (sysact)
 super + shift + BackSpace
-	sysact
+	$HOME/Software/scripts/rofi/powermenu
 
 
 # xkill
@@ -71,6 +74,11 @@ super + alt + b
 #lockscreen
 alt + l
 	betterlockscreen -l dim --off 60 
+
+# Disable auto screen lock
+super + z
+	toggle xautolock
+
 
 # screenshot (flameshot)
 # toggle flameshot

@@ -1,5 +1,5 @@
 typeset -U PATH path
-path=( "/bin" "/usr/bin" "/usr/local/bin" "$HOME/.local/bin" "$HOME/Software/scripts/statusbar" "$HOME/Software/scripts/lf" "$HOME/Software/scripts/dmenu" "$HOME/Software/scripts" "$HOME/Software/scripts/util" "$HOME/.npm-global/")
+path=( "/bin" "/usr/bin" "/usr/local/bin" "$HOME/.local/bin" "$HOME/.bin" "$HOME/.npm-global/")
 export PATH
 
 export PATH="$HOME/.npm-global/bin:$PATH"

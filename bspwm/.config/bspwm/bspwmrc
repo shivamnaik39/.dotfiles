@@ -5,8 +5,32 @@
 # Launch Polybar
 $HOME/.config/polybar/launch.sh &
 
+# Find out your monitor name with xrandr or arandr (save and you get this line)
+$HOME/.screenlayout/monitor.sh &
+
+# Set wallpaper
+nitrogen --restore &
+
+# run compositor
+picom --experimental-backends &
+
+#Policy kit daemon
+/usr/bin/lxpolkit &
+
+#dunst notification daemon
+dunst &
+
+# blue light filter (redshift)
+killall redshift
+redshift &
+
+# screen locker
+xautolock -time 5 -locker "betterlockscreen -l dim --off 60" &
+
+# fix cursor (bspwm)
+xsetroot -cursor_name left_ptr &
+
 # run simple X hot key daemon (sxhkd) bind keys
-killall sxhkd
 sxhkd &
 
 # If refreshing bspwm, remove all previous rules to prevent doubling up.

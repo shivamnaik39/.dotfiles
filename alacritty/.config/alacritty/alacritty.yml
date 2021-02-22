@@ -113,7 +113,7 @@ font:
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
-    family: JetBrains Mono
+    family: JetBrains Mono Medium
     # family: UbuntuMono Nerd Font
     # family: Monofur Nerd Font
     # family: TerminessTTF Nerd Font
@@ -151,7 +151,7 @@ font:
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
-    family: JetBrains Mono
+    family: JetBrains Mono Medium
     # family: UbuntuMono Nerd Font
     # family: Monofuritalic Nerd Font Mono
     # family: TerminessTTF Nerd Font
@@ -319,6 +319,7 @@ colors:
 # The value `0.0` is completely transparent and `1.0` is opaque.
 # background_opacity: 1.0
 background_opacity: 0.90
+#background_opacity: 1
 
 #selection:
 #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
