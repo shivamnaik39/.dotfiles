@@ -1,583 +1,376 @@
-;==========================================================
-;
-;
-;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-;
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/polybar/polybar
-;
-;   The README contains a lot of information
-;
-;==========================================================
-
-[color]
-
-; Active Shade
-shade1 = #2E3440
-shade2 = #434C5E
-shade3 = #5E81AC
-shade4 = #BF616A
-shade5 = #D08770
-shade6 = #B48EAD
-shade7 = #EBCB8B
-shade8 = #88C0D0
-
-;; Active Colors
-bground = #2E3440
-fground = #ECEFF4
-;borderbg = #f7f7f7
-accent = #c6c9d1
-modulefg = #c6c9d1
-modulefg-alt = #c6c9d1
-
-;; Other
-trans = #00000000
-white = #c2b37f
-black = #ca95c5
-
-;; Material Colors
-red = #e53935
-pink = #d81b60
-purple = #8e24aa
-deep-purple = #5e35b1
-indigo = #3949ab
-blue = #1e88e5
-light-blue = #039be5
-cyan = #00acc1
-teal = #00897b
-green = #43a047
-light-green = #7cb342
-lime = #c0ca33
-yellow = #fdd835
-amber = #ffb300
-orange = #fb8c00
-deep-orange = #f4511e
-brown = #6d4c41
-grey = #757575
-blue-gray = #546e7a
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-;; BAR
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
 [global/wm]
+margin-top = 0
+margin-bottom = 0
 
-;margin-bottom = 0
-;margin-top = 0
+[colors]
+background = #2E3440
+background2 = #4C566A
+foreground = #D8DEE9
+widget1 = #2E3440
+widget2 = #4C566A
+widgetfg = #ECEFF4
+occupied = #4C566A
+focused = #8FBCBB
+alert = #BF616A
+underlinef = #5E81AC
+underlineo = #A3BE8C
+volume-min = #a3be8c
+volume-med = #ebcb8b
+volume-max = #bf616a
+red = #BF616A
+orange = #D08770
+yellow = #EBCB8B
+green = #A3BE8C
+purple = #B48EAD
+blue = #5E81AC
+frostblue = #8FBCBB
 
-[bar/main]
 
-monitor = ${env:MONITOR:}
-monitor-fallback =
-monitor-strict = false
-override-redirect = false
+################################################################################
+################################################################################
+############                  MAINBAR-BSPWM                         ############
+################################################################################
+################################################################################
 
-bottom = false
-fixed-center = true
-
-;width = 100%
-;height = 22
-;offset-x = 1%
-;offset-y = 2%
+[bar/mainbar-bspwm]
+monitor = ${env:MONITOR}
+;monitor-fallback = HDMI1
 width = 100%
-height = 18
-offset-x = 0%
-offset-y = 0%
+height = 21
+;offset-x = 1%
+;offset-y = 1%
+radius = 0.0
+fixed-center = true
+bottom = false
+separator = 
 
-background = ${color.bground}
-foreground = ${color.fground}
+background = ${colors.background}
+foreground = ${colors.foreground}
 
-radius-top = 0.0
-radius-bottom = 0.0
+line-size = 0
+line-color = #f00
 
-overline-size = 2
-overline-color = ${color.accent}
+wm-restack = bspwm
+override-redirect = true
 
-;border-bottom-size = 2
-;border-color = ${color.borderbg}
+; Enable support for inter-process messaging
+; See the Messaging wiki page for more details.
+enable-ipc = true
 
-padding = 0
+border-size = 0
+;border-left-size = 0
+;border-right-size = 25
+;border-top-size = 0
+;border-bottom-size = 25
+border-color = #00000000
+
+padding-left = 0
+padding-right = 0
+
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = "JetBrains Mono Medium:size=10;2"
-font-1 = "Font Awesome 5 pro:style=solid:size=12;2"
-font-2 = "Font Awesome 5 pro:style=regular:size=12;2"
-font-3 = "Font Awesome 5 pro:style=brands:size=12;2"
-font-4 = Iosevka Nerd Font:style=Medium:size=12;3
-font-5 = Wuncon Siji:pixelsize=10
+font-0 = "JetBrains Mono:size=10;2"
+font-1 = "JetBrains Mono:size=16;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
+font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
+font-4 = "Font Awesome 5 Brands:pixelsize=10;1"
 
-modules-left =  left1 left2 workspaces left3 left4
-modules-center =
-modules-right = right7  right6 alsa right5 battery right4 backlight right3 network networkspeedup networkspeeddown right2 date right1
+modules-left = bspwm
+modules-center = 
+modules-right = arrow1 networkspeedup networkspeeddown arrow3 battery arrow2 memory2 arrow3 cpu2 arrow2 pavolume arrow3 arch-aur-updates arrow2 date arrow3
 
-separator =
-spacing = 0
-dim-value = 1.0
-wm-name =
-locale =
-
-tray-position = none
 tray-detached = false
-tray-maxsize = 16
-tray-transparent = false
-tray-background = ${color.bground}
 tray-offset-x = 0
 tray-offset-y = 0
-tray-padding = 0
+tray-position = right
+tray-padding = 2
+tray-maxsize = 20
 tray-scale = 1.0
+tray-background = ${colors.widget1}
 
-enable-ipc = true
-
-[settings]
-
-throttle-output = 5
-throttle-output-for = 10
-throttle-input-for = 30
-
-screenchange-reload = false
-
-compositing-background = source
-compositing-foreground = over
-compositing-overline = over
-compositing-underline = over
-compositing-border = over
-
-pseudo-transparency = false
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-;; MODULES
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/left1]
-type = custom/text
-content-background = ${color.shade2}
-content-foreground = ${color.shade1}
-content = "%{T3}%{T-}"
-
-[module/left2]
-type = custom/text
-content-background = ${color.shade3}
-content-foreground = ${color.shade2}
-content = "%{T3}%{T-}"
-
-[module/left3]
-type = custom/text
-content-background = ${color.shade4}
-content-foreground = ${color.shade3}
-content = "%{T3}%{T-}"
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
 
 
-[module/left4]
-type = custom/text
-content-background = ${color.bground}
-content-foreground = ${color.shade4}
-content = "%{T3}%{T-}"
-#+++++++++++++++++++++++++++++++++++++++
 
-[module/right1]
-type = custom/text
-content-background = ${color.shade2}
-content-foreground = ${color.shade1}
-content = "%{T3}%{T-}"
+################################################################################
+################################################################################
+############                       MODULE BSPWM                     ############
+################################################################################
+################################################################################
 
-[module/right2]
-type = custom/text
-content-background = ${color.shade3}
-content-foreground = ${color.shade2}
-content = "%{T3}%{T-}"
+[module/bspwm]
+type = internal/bspwm
 
-[module/right3]
-type = custom/text
-content-background = ${color.shade4}
-content-foreground = ${color.shade3}
-content = "%{T3}%{T-}"
-
-[module/right4]
-type = custom/text
-content-background = ${color.shade5}
-content-foreground = ${color.shade4}
-content = "%{T3}%{T-}"
-
-[module/right5]
-type = custom/text
-content-background = ${color.shade6}
-content-foreground = ${color.shade5}
-content = "%{T3}%{T-}"
-
-[module/right6]
-type = custom/text
-content-background = ${color.shade7}
-content-foreground = ${color.shade6}
-content = "%{T3}%{T-}"
-
-[module/right7]
-type = custom/text
-content-background = ${color.bground}
-content-foreground = ${color.shade7}
-content = "%{T3}%{T-}"
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/launcher]
-type = custom/text
-content = 
-
-content-background = ${color.shade1}
-content-foreground = ${color.modulefg}
-content-padding = 1
-
-click-left =  rofi -show run -theme black -font "Fira Code 10"
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/title]
-type = internal/xwindow
-
-format = <label>
-format-background = ${color.shade4}
-format-foreground = ${color.modulefg}
-format-padding = 1
-
-label =  %title%
-label-maxlen = 100
-
-label-empty =  Empty
-label-empty-foreground = ${color.modulefg}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/workspaces]
-type = internal/xworkspaces
-
-pin-workspaces = true
 enable-click = true
 enable-scroll = true
+reverse-scroll = true
+pin-workspaces = true
 
-label-active = 
-label-occupied = 
-label-urgent = 
-label-empty = 
+ws-icon-1 = 2;
+ws-icon-0 = 1;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+ws-icon-default = " "
 
-format = <label-state>
 
-label-monitor = %name%
-label-active-foreground = ${color.accent}
-label-occupied-foreground = ${color.yellow}
-label-urgent-foreground = ${color.red}
-label-empty-foreground = ${color.modulefg-alt}
-format-background = ${color.shade3}
-format-foreground = ${color.modulefg}
+format = <label-state> 
 
-label-active-padding = 1
-label-urgent-padding = 1
-label-occupied-padding = 1
-label-empty-padding = 1
+label-focused = %name%
+label-focused-background = ${colors.focused}
+label-focused-underline= ${colors.underlinef}
+label-focused-padding = 2
+label-focused-foreground = ${colors.background}
 
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+label-occupied = %name%
+label-occupied-foreground = ${colors.foreground}
+label-occupied-padding = 2
+label-occupied-underline= ${colors.background}
+label-occupied-background = ${colors.background}
 
-[module/alsa]
-type = internal/alsa
+label-urgent = %name%
+label-urgent-padding = 2
+label-urgent-background = ${colors.alert}
+label-urgent-underline= ${colors.alert}
 
-format-volume = <ramp-volume> <label-volume>
-format-volume-background = ${color.shade6}
-format-volume-foreground = ${color.modulefg}
-format-volume-padding = 1
+;label-empty = %name%
+;label-empty-foreground = ${colors.foreground}
+;label-empty-padding = 2
+;label-empty-background = ${colors.background}
 
-label-volume = %percentage%%
+label-empty = 
 
-format-muted-prefix =
-label-muted = ""
-format-muted-background = ${color.shade6}
-format-muted-foreground = ${color.modulefg}
-format-muted-padding = 1
+; Separator in between workspaces
+;label-separator = |
+;label-separator-padding = 10
+;label-separator-foreground = #ffb52a
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-volume-3 = 
-ramp-volume-4 = 
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
 
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-[module/backlight]
-type = internal/backlight
 
-card = radeon_bl0
 
-format = <ramp> <label>
-format-background = ${color.shade4}
-format-foreground = ${color.modulefg}
-format-padding = 1
-enable-scroll = true
+################################################################################
+###############################################################################
+############                       MODULES ARROWS                     ############
+################################################################################
+################################################################################
 
-label = %percentage%%
 
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
+[module/arrow1]
+; grey to Blue
+type = custom/text
+content = "%{T2} %{T-}"
+content-font = 2
+content-foreground = ${colors.widget2}
+content-background = ${colors.background}
 
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+[module/arrow2]
+; grey to Blue
+type = custom/text
+content = "%{T2} %{T-}"
+content-font = 2
+content-foreground = ${colors.widget2}
+content-background = ${colors.widget1}
+
+[module/arrow3]
+; grey to Blue
+type = custom/text
+content = "%{T2} %{T-}"
+content-font = 2
+content-foreground = ${colors.widget1}
+content-background = ${colors.widget2}
+
+################################################################################
+###############################################################################
+############                       MODULES                         ############
+################################################################################
+################################################################################
+
+[module/arch-aur-updates]
+type = custom/script
+exec = ~/.config/polybar/scripts/check-all-updates.sh
+interval = 1000
+label = %output%
+format-foreground = ${colors.widgetfg}
+format-background = ${colors.widget1}
+format-underline = ${colors.green}
+format-prefix = "  "
+format-prefix-foreground = ${colors.widgetfg}
+
+##############################################################################
 
 [module/battery]
+;https://github.com/jaagr/polybar/wiki/Module:-battery
 type = internal/battery
-
-full-at = 99
-
 battery = BAT1
 adapter = ACAD
-
-poll-interval = 2
-time-format = %H:%M
+full-at = 99
 
 format-charging = <animation-charging> <label-charging>
-format-charging-background = ${color.shade5}
-format-charging-foreground = ${color.modulefg}
-format-charging-padding = 1
+label-charging = %percentage%%
+format-charging-foreground = ${colors.widgetfg}
+format-charging-background = ${colors.widget1}
+format-charging-underline = ${colors.orange}
 
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-background = ${color.shade5}
-format-discharging-foreground = ${color.modulefg}
-format-discharging-padding = 1
+label-discharging =  %percentage%%
+format-discharging-underline = ${colors.red}
+format-discharging-foreground = ${colors.widgetfg}
+format-discharging-background = ${colors.widget1}
 
-label-charging = %percentage%%
-label-discharging = %percentage%%
-
-label-full = Fully Charged
-label-full-background = ${color.shade5}
-label-full-foreground = ${color.modulefg}
-label-full-padding = 1
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.widgetfg}
+format-full-underline = ${colors.green}
+format-full-foreground = ${colors.widgetfg}
+format-full-background = ${colors.widget1}
 
 ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-5 = 
-ramp-capacity-6 = 
-ramp-capacity-7 = 
-ramp-capacity-8 = 
-ramp-capacity-9 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.widgetfg}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-5 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.widgetfg}
 animation-charging-framerate = 750
 
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+###########################################################################
+
+[module/cpu2]
+;https://github.com/jaagr/polybar/wiki/Module:-cpu
+type = internal/cpu
+; Seconds to sleep between updates
+; Default: 1
+interval = 1
+format-foreground = ${colors.widgetfg}
+format-background = ${colors.widget1}
+format-underline = ${colors.red}
+format-prefix = ""
+format-prefix-foreground = ${colors.widgetfg}
+
+label-font = 1
+
+; Available tags:
+;   <label> (default)
+;   <bar-load>
+;   <ramp-load>
+;   <ramp-coreload>
+format = <label>
+
+
+; Available tokens:
+;   %percentage% (default) - total cpu load
+;   %percentage-cores% - load percentage for each core
+;   %percentage-core[1-9]% - load percentage for specific core
+label=%percentage:3%%
+
+################################################################################
 
 [module/date]
+;https://github.com/jaagr/polybar/wiki/Module:-date
 type = internal/date
-interval = 1.0
+; Seconds to sleep between updates
+interval = 5
+; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+date = " %a %b %d, %Y "
+date-alt = " %a %b %d, %Y"
+time = %l:%M %p
+time-alt = %l:%M%p
+format-prefix = " "
+format-prefix-foreground = ${colors.widgetfg}
+format-foreground = ${colors.widgetfg}
+format-background = ${colors.widget2}
+format-underline = ${colors.purple}
+label = "%date%  %time% "
 
-time =  %I:%M %p
-time-alt =  %d/%m/%Y%
+#################################################################
+
+[module/memory2]
+;https://github.com/jaagr/polybar/wiki/Module:-memory
+type = internal/memory
+interval = 1
+; Available tokens:
+;   %percentage_used% (default)
+;   %percentage_free%
+;   %gb_used%
+;   %gb_free%
+;   %gb_total%
+;   %mb_used%
+;   %mb_free%
+;   %mb_total%
+label = %percentage_used%%
 
 format = <label>
-format-background = ${color.shade2}
-format-foreground = ${color.modulefg}
-format-padding = 1
-label = %time%
+format-prefix = "  "
+format-prefix-foreground = ${colors.widgetfg}
+format-foreground = ${colors.widgetfg}
+format-underline = ${colors.yellow}
+format-background = ${colors.widget2}
 
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/powermenu]
-type = custom/menu
-
-expand-right = true
-
-menu-0-0 = 
-menu-0-0-exec = menu-open-1
-menu-0-1 = 
-menu-0-1-exec = menu-open-2
-menu-0-2 = 
-menu-0-2-exec = menu-open-3
-menu-0-3 = 
-menu-0-3-exec = menu-open-4
-
-menu-1-0 = 
-menu-1-0-exec = systemctl reboot
-menu-1-1 = 
-menu-1-1-exec = menu-open-0
-
-menu-2-0 = 
-menu-2-0-exec = systemctl poweroff
-menu-2-1 = 
-menu-2-1-exec = menu-open-0
-
-menu-3-0 = 
-menu-3-0-exec = i3lock-fancy
-menu-3-1 = 
-menu-3-1-exec = menu-open-0
-
-menu-4-0 = 
-menu-4-0-exec = i3-msg exit
-menu-4-1 = 
-menu-4-1-exec = menu-open-0
-
-format-spacing = 1
-format-background = ${color.shade1}
-format-foreground = ${color.modulefg}
-format-padding = 1
-
-label-open = 
-label-close = 
-label-separator = |
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/network]
-type = internal/network
-interface = wlp2s0
-
-interval = 1.0
-accumulate-stats = true
-unknown-as-up = true
-
-format-connected =  <ramp-signal> <label-connected>
-format-connected-background = ${color.shade3}
-format-connected-foreground = ${color.modulefg}
-format-connected-padding = 1
-
-format-disconnected = <label-disconnected>
-format-disconnected-background = ${color.shade3}
-format-disconnected-foreground = ${color.modulefg}
-format-disconnected-padding = 1
-
-label-connected = %essid%
-label-disconnected =  "Not Connected"
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/updates]
-type = custom/script
-exec = ~/.config/polybar/scripts/arch-updates.sh
-interval = 1
-label = Updates: %output%
-format-foreground = ${color.modulefg}
-format-background = ${color.shade7}
-format-prefix = " "
-format-prefix-foreground = $(color.modulefg)
-label-urgent-padding    = 1
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+################################################################################
 
 [module/networkspeedup]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
-;interface = wlp2s0
+interface = wlp2s0
 ;interface = enp14s0
 ;interface = enp0s31f6
-interface = wlp2s0
+;interface = enp6s0
 label-connected = "%upspeed:7%"
 format-connected = <label-connected>
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${color.modulefg}
-format-connected-foreground = ${color.modulefg}
-format-connected-background = ${color.shade3}
+format-connected-prefix = "  "
+format-connected-prefix-foreground = ${colors.widgetfg}
+format-connected-foreground = ${colors.widgetfg}
+format-connected-background = ${colors.widget2}
+format-connected-underline = ${colors.green}
 
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+################################################################################
 
 [module/networkspeeddown]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
-;interface = wlp2s0
+interface = wlp2s0
 ;interface = enp14s0
 ;interface = enp0s31f6
-interface = wlp2s0
+;interface = enp6s0
 label-connected = "%downspeed:7%"
 format-connected = <label-connected>
-format-connected-prefix = "  "
-format-connected-prefix-foreground = ${color.modulefg}
-format-connected-foreground = ${color.modulefg}
-format-connected-background = ${color.shade3}
+format-connected-prefix = "   "
+format-connected-prefix-foreground = ${colors.widgetfg}
+format-connected-foreground = ${colors.widgetfg}
+format-connected-background = ${colors.widget2}
+format-connected-underline = ${colors.purple}
 
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-[module/chrome]
-type = custom/text
+################################################################################
 
-; Label
-content            = 
-content-background = ${color.shade2}
-content-foreground = ${color.fground}
-content-padding    = 2
+[module/pavolume]
+type = custom/script
+tail = true
+label = %output%
+exec = ~/.config/polybar/scripts/pavolume.sh --listen
+click-right = exec pavucontrol
+click-left = ~/.config/polybar/scripts/pavolume.sh --togmute
+scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
+scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
+format-foreground = ${colors.widgetfg}
+format-background = ${colors.widget2}
+format-underline = ${colors.frostblue}
 
-; Mouse click
-click-left = google-chrome-stable &
+#####################################################################################
 
-[module/vscode]
-type = custom/text
-
-; Label
-content            = 
-content-background = ${color.shade2}
-content-foreground = ${color.fground}
-content-padding    = 1
-
-; Mouse click
-click-left = atom &
-
-[module/gimp]
-type = custom/text
-
-; Label
-content            = 
-content-background = ${color.shade2}
-content-foreground = ${color.fground}
-content-padding    = 1
-
-; Mouse click
-click-left = gimp &
-
-[module/termite]
-type = custom/text
-
-; Label
-content            = 
-content-background = ${color.shade2}
-content-foreground = ${color.fground}
-content-padding    = 1
-
-; Mouse click
-click-left = terminator &
-
-[module/thunar]
-type = custom/text
-
-; Label
-content            = 
-content-background = ${color.shade2}
-content-foreground = ${color.fground}
-content-padding    = 1
-
-; Mouse click
-click-left = Thunar&
-
-[module/youtube]
-type = custom/text
-
-; Label
-content            = 
-content-background = ${color.shade2}
-content-foreground = ${color.fground}
-content-padding    = 1
-
-; Mouse click
-click-left = exec firefox https://www.youtube.com/channel/UC8hG0cQIRvR4hsGhU0bYWmg
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
