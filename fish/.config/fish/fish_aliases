@@ -57,14 +57,6 @@ abbr userlist "cut -d: -f1 /etc/passwd"
 #merge new settings
 abbr merge "xrdb -merge ~/.Xresources"
 
-# Aliases for software managment
-# pacman or pm
-alias pacman 'sudo pacman --color auto'
-
-# yay as aur helper - updates everything
-abbr pksyua "yay -Syu --noconfirm"
-abbr upall "yay -Syu --noconfirm"
-
 #ps
 abbr psa "ps auxf"
 abbr psgrep "ps aux | grep -v grep | grep -i -e VSZ -e"

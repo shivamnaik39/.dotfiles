@@ -182,32 +182,3 @@ ex=:\
 *.nix=:\
 "
 
-export FFF_TRASH_CMD="trash-put"
-export FFF_TRASH=~/.local/share/Trash/files
-export FFF_KEY_MKDIR="f"
-export FFF_KEY_MKFILE="i"
-export FFF_TRASH=~/.local/share/Trash/files
-export FFF_FAV1=~/videos/anime
-export FFF_FAV2=~/documents/Uni
-export FFF_FAV3=~/pictures/Wallpapers/wallpapers
-export FFF_MARK_FORMAT="> %f"
-export FFF_FILE_FORMAT=" %f"
-
-export NNN_BMS='v:~/videos;a:~/videos/anime'
-export NNN_TRASH=1
-export NNN_PLUG='o:fzopen'
-
-# Start blinking
-#export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
-# Start bold
-#export LESS_TERMCAP_md=$(tput bold; tput setaf 2) # green
-# Start stand out
-#export LESS_TERMCAP_so=$(tput bold; tput setaf 3) # yellow
-# End standout
-#export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
-# Start underline
-#export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 1) # red
-# End Underline
-#export LESS_TERMCAP_ue=$(tput sgr0)
-# End bold, blinking, standout, underline
-#export LESS_TERMCAP_me=$(tput sgr0)

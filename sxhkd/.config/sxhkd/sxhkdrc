@@ -1,77 +1,59 @@
-# Basic binds
+# ---------------------------- GUI Applications ---------------------------------------------
 
-#Terminal Emulator
+# Terminal Emulator
 super + Return
-	$TERMINAL
+	$TERMINAL 
 
-#menu
+# Menu
+# Dmenu
 super + alt + d
 	dmenu_run -fn "JetBrains Mono Medium-10"
 
+# Rofi
 super + d
 	$HOME/Software/scripts/rofi/launcher
 
-#File Manager
-super + r
-	$TERMINAL -e $TFILE
-
-# ---------------------------- Applications ---------------------------------------------
-
-#Web Browsers
+# Web Browsers
 super + alt + w
 	$BROWSER
 
-#Graphics
+# Graphics
 super + alt + {i,g}
 	{inkscape,gimp}
 
-#Development
+# Development
 super + alt + {v}
 	{vscodium}
 
-#Pamac Manager
+# Pamac Manager
 super + alt + p
 	pamac-manager
 
-
-#Thunar file manager
+# Graphical File Manager
 super + alt + r
 	$GFILE	
 
-#htop
-super + O
+# -------------------------------------------------------------------------------------------------
+
+# ------------------------------------- CLI Applications ------------------------------------------
+
+# File Manager
+super + r
+	$TERMINAL -e $TFILE
+
+# HTOP
+super + shift + h
 	$TERMINAL -e htop
 
-# nmtui (network manager gui)
-#super + alt + n
-#	$TERMINAL -e nmtui
+# nmtui (network manager client)
+super + shift + w
+	$TERMINAL -e nmtui
 
-# toggle network manager applet
-super + alt + n
-	 toggle nm-applet
+# -------------------------------------------------------------------------------------------------
 
-super + c
-	rofi -show calc -modi calc -no-show-match -no-sort -theme $HOME/.config/rofi/launcher/style.rasi
+#--------------------------------- Utilities --------------------------------------------------
 
-#emoji support
-alt + e 
-	dmenuunicode
-
-# logout menu (sysact)
-super + shift + BackSpace
-	$HOME/Software/scripts/rofi/powermenu
-
-
-# xkill
-super + Escape
-	xkill
-
-#bluetooth manager 
-super + alt + b
-	toggle blueberry
-
-#--------------------------------- Lockscreen --------------------------------------------------
-#lockscreen
+# Lockscreen
 alt + l
 	betterlockscreen -l dim --off 60 
 
@@ -80,98 +62,132 @@ super + z
 	toggle xautolock
 
 
-# screenshot (flameshot)
-# toggle flameshot
+# Screenshot (flameshot)
+# Toggle Flameshot
 shift + Print
 	toggle flameshot
 
-# capture partial screenshot
+# Capture Partial Screenshot
 Print
 	flameshot gui
 
-# capture full screenshot
+# Capture Full Screenshot
 super Print
 	flameshot gui
 
-# clipboard manager (parclllite)
+# Clipboard Manager (Parclllite)
 super + Insert
 	toggle parcellite
 
-#------------------------------------------ Brightness -----------------------------------------------------
+# Toggle Network Manager Applet
+super + alt + n
+	 toggle nm-applet
 
-#Screen Brightness
-alt + {b,B}
-	light -{A,U} 5
+# Xkill
+super + Escape
+	xkill
 
-#-------------------------------------- Audio ---------------------------------------------------------------
-#Raises volume
-XF86AudioRaiseVolume
-    amixer set Master 5%+
+# Bluetooth Manager 
+super + alt + b
+	toggle blueberry-tray
 
-#Lowers volume
-XF86AudioLowerVolume
-    amixer set Master 5%-
+# Calculator
+super + c
+	rofi -show calc -modi calc -no-show-match -no-sort -theme $HOME/.config/rofi/launcher/style.rasi
 
-#Mute
-XF86AudioMute
-    amixer -D pulse set Master 1+ toggle
+# Emoji Support
+alt + e 
+	dmenuunicode
 
-#---------------------------------------------------------------------------------------------------------------
-#reload sxhkd:
+# Logout Menu (sysact)
+super + shift + BackSpace
+	$HOME/Software/scripts/rofi/powermenu
+
+# Reload sxhkd:
 super + shift + s
 	pkill -USR1 -x sxhkd
 
-
-#------------------------------ POLYBAR -------------------------------------
-#Hide polybar
+# Hide Polybar
 super + b
     polybar-msg cmd toggle
 
-
-
-#Picom Toggle
-ctrl + alt + o
+# Picom Toggle
+super + alt + o
 	toggle picom
 
-#---------------------------------- Bspwm -----------------------------------------------
-# STATE/FLAGS
-# toggle the window state 
-super + {t,shift + t,s} 	
-	bspc node -t {tiled,pseudo_tiled,floating}
+#------------------------------------------ Controls -----------------------------------------------------
 
-#Toggle fullscreen of window
-super + f
-	bspc node --state \~fullscreen
+# Screen Brightness
+super + {XF86AudioRaiseVolume,XF86AudioLowerVolume}
+	light -{A,U} 5
 
-# Toggle pseudo tiling of window
-super + p
-	bspc node --state \~pseudo_tiled
+# Raises volume
+XF86AudioRaiseVolume
+    amixer set Master 5%+
 
-# set the node flags 
-#super + ctrl + {m,x,y,z} 	
-#	bspc node -g {marked,locked,sticky,private}
+# Lowers volume
+XF86AudioLowerVolume
+    amixer set Master 5%-
 
-# quit a window
-super + q
-	bspc node -c
+# Mute
+XF86AudioMute
+    amixer -D pulse set Master 1+ toggle
 
-# quit/restart bspwm 
+#PLAY
+XF86AudioPlay
+    playerctl play-pause
+
+#Next
+XF86AudioNext
+    playerctl next
+
+#previous
+XF86AudioPrev
+    playerctl previous
+
+#Stop
+XF86AudioStop
+    playerctl stop
+
+#Brightness up
+XF86MonBrightnessUp
+    xbacklight -inc 10
+
+#Brightness down
+XF86MonBrightnessDown
+    xbacklight -dec 10
+
+#---------------------------------- BSPWM Key Bindings -----------------------------------------------
+
+# Quit/Restart bspwm 
 super + shift + {q,r} 	
 	bspc {quit,wm -r}
 
-# alternate between the tiled and monocle layout
-super + m 	
-	bspc desktop -l next
-
+# Quit a Window
+super + q
+	bspc node -c
 
 # FOCUS/SWAP 
 # focus the node in the given direction 
 super + {_,shift + }{h,j,k,l} 	
 	bspc node -{f,s} {west,south,north,east} 
 
-# focus the nodes in the given direction (arrow keys)
-super + {Left,Down,Up,Right}
-	bspc node -f {west,south,north,east}
+# Focus or Send to the given desktop 
+super + {1-9,0} 	
+	bspc desktop -f focused:'^{1-9,10}'
+
+super + shift + {1-9,0}
+    id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
+
+# STATE/FLAGS
+# toggle the window state 
+super + {t,f,p,o}	
+	bspc node --state \~{tiled,fullscreen,pseudo_tiled,floating}
+
+# alternate between the tiled and monocle layout
+super + m 	
+	bspc desktop -l next
+
 
 # Flip layout vertically/horizontally
 super + {_,shift + }a
@@ -189,17 +205,9 @@ super + control + {Up, Down}
 super + control + {Right, Left}
 	bspc node @parent --rotate {90,270}
 
-# Flip the tree from the current nodes parent
-#super + control + {h,j,k,l}
- # bspc node @parent -F {vertical,horizontal,horizontal,verical}
-
-# focus the next/previous desktop in the current monitor 
-super + bracket{left,right} 	
-	bspc desktop -f {prev,next}.local 
-
+# Move to next workspace
 super + alt + {Left,Right}
         bspc desktop -f {prev,next}.local
-
 
 # focus the next/previous node in the current desktop 
 super + {_,shift + }n 	
@@ -208,14 +216,6 @@ super + {_,shift + }n
 # focus the last node/desktop 
 super + Tab 	
 	bspc desktop -f last
-
-
-# focus or send to the given desktop 
-super + {1-9,0} 	
-	bspc desktop -f focused:'^{1-9,10}'
-
-super + shift + {1-9,0}
-    id=$(bspc query -N -n); bspc node -d ^{1-9,10}; bspc node -f ${id}}
 
 
 # PRESELECT 
@@ -249,13 +249,13 @@ ctrl + alt + shift + {h,j,k,l}
 super + shift + {Left,Down,Up,Right} 	
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# swap the current node and the biggest node 
-#super + g 	
-#	bspc node -s biggest
+# swap the current node and the biggest node
+alt + g
+	bspc node -s biggest.local
 
 
 # Increase/decrease window gap on focused desktop
-super + shift + bracket{left,right}
+super +  bracket{left,right}
 	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 5 ))
 
 
@@ -268,7 +268,7 @@ super + shift + Right
 	bspc node -m next --follow
 
 
-
+# ------------------------------------------------------------------------------------------------------
 
 
 
