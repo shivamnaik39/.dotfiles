@@ -69,5 +69,6 @@
     "prettier.singleQuote": true,
     "[haskell]": {
         "editor.defaultFormatter": "haskell.haskell"
-    }
+    },
+    "terminal.integrated.shell.linux": "/usr/bin/fish"
 }
