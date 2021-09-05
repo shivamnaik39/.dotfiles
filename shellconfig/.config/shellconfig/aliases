@@ -11,19 +11,19 @@ alias cd..='cd ..'
 alias pdw="pwd"
 
 # use doas instead of sudo
-alias sudo=doas
+#alias sudo=doas
 
-#pacman and yay
+#pacman and paru
 alias udpate='sudo pacman -Syu'
 alias updatef='sudo pacman -Syyu'
 alias search='pacman -Ss'
 alias install='sudo pacman -S'
 alias intallf='sudo pacman -Sy'
 alias remove='sudo pacman -Rs'
-alias updatea='yay -Sua'
-alias searcha='yay -Ss'
-alias installa='yay -S'
-alias removea='yay -Rs'
+alias updatea='paru -Sua'
+alias searcha='paru -Ss'
+alias installa='paru -S'
+alias removea='paru -Rs'
 
 
 ## Colorize the grep command output for ease of use (good for log files)##
@@ -57,9 +57,9 @@ alias merge="xrdb -merge ~/.Xresources"
 alias pacman='sudo pacman --color auto'
 alias update='sudo pacman -Syu'
 
-# yay as aur helper - updates everything
-alias pksyua="yay -Syu --noconfirm"
-alias upall="yay -Syu --noconfirm"
+# paru as aur helper - updates everything
+alias pksyua="paru -Syu --noconfirm"
+alias upall="paru -Syu --noconfirm"
 
 #ps
 alias psa="ps auxf"
@@ -92,7 +92,7 @@ alias kc='killall conky'
 alias hw="hwinfo --short"
 
 #skip integrity check
-alias yayskip='yay -S --mflags --skipinteg'
+alias paruskip='paru -S --mflags --skipinteg'
 alias trizenskip='trizen -S --skipinteg'
 
 #check vulnerabilities microcode

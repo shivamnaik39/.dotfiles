@@ -22,7 +22,20 @@ dunst &
 
 # blue light filter (redshift)
 killall redshift
+redshift -P -O 6500
 redshift &
+
+# netowrk manager applet
+killall nm-applet
+nm-applet &
+
+# Bluetooth
+killall blueberry-tray
+blueberry-tray &
+
+# Clipboard Manager
+killall parcellite
+parcellite &
 
 # screen locker
 xautolock -time 5 -locker "betterlockscreen -l dim --off 60" &
@@ -97,12 +110,17 @@ bspc rule -a VSCodium desktop='^3' follow=on
 bspc rule -a robo3t desktop='^4' follow=on 
 bspc rule -a Postman desktop='^5' follow=on 
 bspc rule -a Gimp desktop='^6' follow=on 
+bspc rule -a TelegramDesktop desktop='^6' follow=on
 bspc rule -a Inkscape desktop='^6' follow=on
 bspc rule -a libreoffice desktop='^7' follow=on
 bspc rule -a Pcmanfm desktop='^8' follow=on
 bspc rule -a Thunar desktop='^8' follow=on
 bspc rule -a Pamac-manager desktop='^9' follow=on
 bspc rule -a persepolis desktop='^10' follow=on
+bspc rule -a qbittorrent desktop='^10' follow=on
+bspc rule -a rclone-browser desktop='^10' follow=on
+bspc rule -a Deluge-gtk desktop='^10' follow=on
+bspc rule -a jellyfinmediaplayer desktop='^10' follow=on
 
 # fullscreen applications
 bspc rule -a Sxiv state=fullscreen
@@ -110,4 +128,7 @@ bspc rule -a mpv state=fullscreen
 bspc rule -a Zathura state=fullscreen
 
 # floating application
-bspc rule -a gimp floating=on
+bspc rule -a gimp state=floating
+bspc rule -a MEGAsync state=floating
+bspc rule -a Blueberry.py state=floating
+bspc rule -a Xfce4-taskmanager state=floating

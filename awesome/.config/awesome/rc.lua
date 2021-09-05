@@ -48,7 +48,7 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "st"
+terminal = "$TERMINAL"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -568,7 +568,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.spawn.with_shell("picom --experimental-backends")
 awful.spawn.with_shell("/usr/bin/lxpolkit")
 awful.spawn.with_shell("dunst")
-awful.spawn.with_shell("redshift")
+--awful.spawn.with_shell("redshift")
 awful.spawn.with_shell("xautolock -time 5 -locker 'betterlockscreen -l dim --off 60'")
 awful.spawn.with_shell("nitrogen --restore")
 

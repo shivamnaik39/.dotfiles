@@ -10,7 +10,7 @@
 configuration {
     lines:							10;
     columns:						1;
-    font: 							"Museo Sans 12";
+    font: 							"JetBrains Mono Bold 12";
     bw: 							0;
     location: 						0;
     padding: 						0;
@@ -42,11 +42,11 @@ configuration {
 }
 
 window {
-    border: 						0px;
+    border: 						3px;
     border-color: 					@ac;
     border-radius: 					12px;
     padding: 						30;
-    width: 							35%;
+    width: 						35%;
 }
 
 prompt {
@@ -154,7 +154,7 @@ button {
 
 button selected {
     background-color:             	@ac;
-    text-color: 					@fg;
+    text-color: 					@bg;
     border: 						0px;
     border-radius: 					4px;
     border-color: 					@fg;

@@ -10,9 +10,9 @@ export EDITOR="nvim"
 export READER="evince"
 export VISUAL="vim"
 export TERMINAL="alacritty"
-export TFILE="lf"
+export TFILE="ranger"
 export GFILE="pcmanfm"
-export BROWSER="firefox"
+export BROWSER="brave"
 export VIDEO="mpv"
 export IMAGE="sxiv"
 export COLORTERM="truecolor"
@@ -181,4 +181,3 @@ ex=:\
 *.pdf=:\
 *.nix=:\
 "
-

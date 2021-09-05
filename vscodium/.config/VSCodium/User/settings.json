@@ -8,7 +8,6 @@
     },
     "terminal.integrated.fontFamily": "Fira Code, FontAwesome",
     "terminal.integrated.fontSize": 16,
-    "window.zoomLevel": 0,
     "liveServer.settings.donotShowInfoMsg": true,
     "liveServer.settings.fullReload": true,
     "liveSassCompile.settings.generateMap": false,
@@ -69,4 +68,8 @@
     "[haskell]": {
         "editor.defaultFormatter": "haskell.haskell"
     },
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
 }

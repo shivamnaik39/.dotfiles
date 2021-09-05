@@ -1,9 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-
-#neofetch
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -100,8 +94,13 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source /home/shivam/.config/broot/launcher/bash/br
 
+export EDITOR="nvim"
+export DISPLAY=":0"
+export XAUTHORITY=~/.Xauthority
+
 eval "$(starship init zsh)"
 
+# FISH shell
 if [[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]]
 then
 	exec fish

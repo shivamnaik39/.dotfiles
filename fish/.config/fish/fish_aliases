@@ -1,34 +1,32 @@
-#abbres
+#aliases
 #list
 alias ls='exa'
-abbr ls 'ls'
-abbr la 'ls -a'
-abbr ll 'ls -la'
-abbr l 'ls'
-abbr l. "ls -A | egrep '^\.'"
+alias la='ls -a'
+alias ll='ls -la'
+alias l='ls'
+alias l.="ls -A | egrep='^\.'"
 
 #fix obvious typo's
-abbr cd.. 'cd ..'
-abbr pdw "pwd"
+alias cd..='cd ..'
+alias pdw="pwd"
 
 # use doas instead of sudo
-abbr sudo doas
-alias sudo=doas
+#alias sudo=doas
 
 # some core util aliases
 alias cat='bat'
 
-#pacman and yay
-abbr udpate 'sudo pacman -Syu'
-abbr updatef 'sudo pacman -Syyu'
-abbr search 'pacman -Ss'
-abbr install 'sudo pacman -S'
-abbr intallf 'sudo pacman -Sy'
-abbr remove 'sudo pacman -Rs'
-abbr updatea 'yay -Sua'
-abbr searcha 'yay -Ss'
-abbr installa 'yay -S'
-abbr removea 'yay -Rs'
+#pacman and paru
+alias update='sudo pacman -Syu'
+alias updatef='sudo pacman -Syyu'
+alias search='pacman -Ss'
+alias install='sudo pacman -S'
+alias intallf='sudo pacman -Sy'
+alias remove='sudo pacman -Rs'
+alias updatea='paru -Sua --sudoloop --upgrademenu'
+alias searcha='paru -Ss'
+alias installa='paru -S'
+alias removea='paru -Rs'
 
 
 ## Colorize the grep command output for ease of use (good for log files)##
@@ -37,67 +35,67 @@ alias egrep='egrep --color auto'
 alias fgrep='fgrep --color auto'
 
 #readable output
-abbr df 'df -h'
+alias df='df -h'
 
 #pacman unlock
-abbr unlock "sudo rm /var/lib/pacman/db.lck"
+alias unlock="sudo rm /var/lib/pacman/db.lck"
 
 #free
-abbr free "free -mt"
+alias free="free -mt"
 
 #use all cores
-abbr uac "sh ~/.bin/main/000*"
+alias uac="sh ~/.bin/main/000*"
 
 #continue download
-abbr wget "wget -c"
+alias wget="wget -c"
 
 #userlist
-abbr userlist "cut -d: -f1 /etc/passwd"
+alias userlist="cut -d: -f1 /etc/passwd"
 
 #merge new settings
-abbr merge "xrdb -merge ~/.Xresources"
+alias merge="xrdb -merge ~/.Xresources"
 
 #ps
-abbr psa "ps auxf"
-abbr psgrep "ps aux | grep -v grep | grep -i -e VSZ -e"
+alias psa="ps auxf"
+alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
 
 #grub update
-abbr update-grub "sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 #add new fonts
-abbr update-fc 'sudo fc-cache -fv'
+alias update-fc='sudo fc-cache -fv'
 
 #copy/paste all content of /etc/skel over to home folder - backup of config created - beware
-abbr skel 'cp -Rf ~/.config ~/.config-backup-(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
+alias skel='cp -Rf ~/.config ~/.config-backup-(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
 #backup contents of /etc/skel to hidden backup folder in home/user
-abbr bupskel 'cp -Rf /etc/skel ~/.skel-backup-(date +%Y.%m.%d-%H.%M.%S)'
+alias bupskel='cp -Rf /etc/skel ~/.skel-backup-(date +%Y.%m.%d-%H.%M.%S)'
 
 #copy bashrc-latest over on bashrc - cb  copy bashrc
-abbr cb 'sudo cp /etc/skel/.bashrc ~/.bashrc && source ~/.bashrc'
+alias cb='sudo cp /etc/skel/.bashrc ~/.bashrc && source ~/.bashrc'
 #copy /etc/skel/.zshrc over on ~/.zshrc - cb  copy zshrc
-#abbr cz 'sudo cp /etc/skel/.zshrc ~/.zshrc && source ~/.zshrc'
+#alias cz='sudo cp /etc/skel/.zshrc ~/.zshrc && source ~/.zshrc'
 
 #quickly kill conkies
-abbr kc 'killall conky'
+alias kc='killall conky'
 
 #hardware info --short
-abbr hw "hwinfo --short"
+alias hw="hwinfo --short"
 
 #skip integrity check
-abbr yayskip 'yay -S --mflags --skipinteg'
-abbr trizenskip 'trizen -S --skipinteg'
+alias paruskip='paru -S --mflags --skipinteg'
+alias trizenskip='trizen -S --skipinteg'
 
 #check vulnerabilities microcode
-abbr microcode 'grep . /sys/devices/system/cpu/vulnerabilities/*'
+alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 
 #get fastest mirrors in your neighborhood
-abbr mirror "sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-abbr mirrord "sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
-abbr mirrors "sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
-abbr mirrora "sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
 #mounting the folder Public for exchange between host and guest on virtualbox
-abbr vbm "sudo mount -t vboxsf -o rw,uid 1000,gid 1000 Public /home/$USER/Public"
+alias vbm="sudo mount -t vboxsf -o rw,uid 1000,gid 1000 Public /home/$USER/Public"
 
 #shopt
 #shopt -s autocd # change to named directory
@@ -105,60 +103,60 @@ abbr vbm "sudo mount -t vboxsf -o rw,uid 1000,gid 1000 Public /home/$USER/Public
 #shopt -s cmdhist # save multi-line commands in history as single line
 #shopt -s dotglob
 #shopt -s histappend # do not overwrite history
-#shopt -s expand_abbres # expand aliases
+#shopt -s expand_aliases # expand aliases
 
 #youtube-dl
-abbr yta-aac "youtube-dl --extract-audio --audio-format aac "
-abbr yta-best "youtube-dl --extract-audio --audio-format best "
-abbr yta-flac "youtube-dl --extract-audio --audio-format flac "
-abbr yta-m4a "youtube-dl --extract-audio --audio-format m4a "
-abbr yta-mp3 "youtube-dl --extract-audio --audio-format mp3 "
-abbr yta-opus "youtube-dl --extract-audio --audio-format opus "
-abbr yta-vorbis "youtube-dl --extract-audio --audio-format vorbis "
-abbr yta-wav "youtube-dl --extract-audio --audio-format wav "
+alias yta-aac="youtube-dl --extract-audio --audio-format aac="
+alias yta-best="youtube-dl --extract-audio --audio-format best="
+alias yta-flac="youtube-dl --extract-audio --audio-format flac="
+alias yta-m4a="youtube-dl --extract-audio --audio-format m4a="
+alias yta-mp3="youtube-dl --extract-audio --audio-format mp3="
+alias yta-opus="youtube-dl --extract-audio --audio-format opus="
+alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis="
+alias yta-wav="youtube-dl --extract-audio --audio-format wav="
 
-abbr ytv-best "youtube-dl -f bestvideo+bestaudio "
+alias ytv-best="youtube-dl -f bestvideo+bestaudio="
 
 #Recent Installed Packages
-abbr rip "expac --timefmt '%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
-abbr riplong "expac --timefmt '%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | nl"
+alias rip="expac --timefmt='%Y-%m-%d %T'='%l\t%n %v' | sort | tail -200 | nl"
+alias riplong="expac --timefmt='%Y-%m-%d %T'='%l\t%n %v' | sort | tail -3000 | nl"
 
 #Cleanup orphaned packages
-abbr cleanup 'sudo pacman -Rns (pacman -Qtdq)'
+alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
 
 #get the error messages from journalctl
-abbr jctl "journalctl -p 3 -xb"
+alias jctl="journalctl -p 3 -xb"
 
 #nano for important configuration files
 #know what you do in these files
-abbr nlightdm "sudo nano /etc/lightdm/lightdm.conf"
-abbr npacman "sudo nano /etc/pacman.conf"
-abbr ngrub "sudo nano /etc/default/grub"
-abbr nmkinitcpio "sudo nano /etc/mkinitcpio.conf"
-abbr nslim "sudo nano /etc/slim.conf"
-abbr noblogout "sudo nano /etc/oblogout.conf"
-abbr nmirrorlist "sudo nano /etc/pacman.d/mirrorlist"
-abbr nconfgrub "sudo nano /boot/grub/grub.cfg"
+alias nlightdm="sudo nano /etc/lightdm/lightdm.conf"
+alias npacman="sudo nano /etc/pacman.conf"
+alias ngrub="sudo nano /etc/default/grub"
+alias nmkinitcpio="sudo nano /etc/mkinitcpio.con"
+alias nslim="sudo nano /etc/slim.conf"
+alias noblogout="sudo nano /etc/oblogout.conf"
+alias nmirrorlist="sudo nano /etc/pacman.d/mirrorlist"
+alias nconfgrub="sudo nano /boot/grub/grub.cfg"
 
 #gpg
 #verify signature for isos
-abbr gpg-check "gpg2 --keyserver-options auto-key-retrieve --verify"
+alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
 #receive the key of a developer
-abbr gpg-retrieve "gpg2 --keyserver-options auto-key-retrieve --receive-keys"
+alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 
 #shutdown or reboot
-abbr ssn "sudo shutdown now"
-abbr sr "sudo reboot"
+alias ssn="sudo shutdown now"
+alias sr="sudo reboot"
 
 #custom utilities
-abbr nf "neofetch"
-abbr ht "htop"
-abbr cmx "cmatrix"
+alias nf="neofetch"
+alias ht="htop"
+alias cmx="cmatrix"
 
 # switch between shells
-alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
-alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
-alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
+alias tobash="sudo chsh $USER -s /bin/bash && echo='Now log out.'"
+alias tozsh="sudo chsh $USER -s /bin/zsh && echo='Now log out.'"
+alias tofish="sudo chsh $USER -s /bin/fish && echo='Now log out.'"
 
 # Git Aliases
 alias g='git'
@@ -182,7 +180,16 @@ alias grm='git remote'
 alias gb='git branch'
 alias gm='git merge'
 alias gf='git fetch'
-#alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold
+#alias glg="git log --graph --aliasev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold
 #yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+
+# systemctl 
+alias sct='systemctl start'
+alias scr='systemctl restart'
+alias scs='systemctl stop'
+
+# protonvpn cli
+alias pvc='sudo protonvpn c'
+alias pvd='sudo protonvpn d'
 
 #neofetch

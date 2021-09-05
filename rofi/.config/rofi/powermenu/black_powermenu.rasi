@@ -4,8 +4,8 @@
   background-alt:   #2E3440;
   background:      #2E3440;
   selected:      #D8DEE9;
-  foreground:      #D8DEE9;
-  ac:      #BF616A;
+  foreground:      #8fbcbb;
+  ac:      #88c0d0;
   red:     #BF616A;
   green:   #A3BE8C;
   yellow:  #EBCB8B;

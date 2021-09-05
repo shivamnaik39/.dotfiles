@@ -4,6 +4,9 @@
 super + Return
 	$TERMINAL 
 
+super + alt + Return
+	tdrop -ma -w 60% -h 60% -x 20% -y 20% alacritty
+
 # Menu
 # Dmenu
 super + alt + d
@@ -11,7 +14,7 @@ super + alt + d
 
 # Rofi
 super + d
-	$HOME/Software/scripts/rofi/launcher
+	bash $HOME/.config/rofi/launchers/colorful/launcher.sh	
 
 # Web Browsers
 super + alt + w
@@ -42,7 +45,7 @@ super + r
 	$TERMINAL -e $TFILE
 
 # HTOP
-super + shift + h
+super + s
 	$TERMINAL -e htop
 
 # nmtui (network manager client)
@@ -89,11 +92,15 @@ super + Escape
 
 # Bluetooth Manager 
 super + alt + b
-	toggle blueberry-tray
+	blueberry
+
+# Task Manager
+super + alt + t
+	xfce4-taskmanager
 
 # Calculator
 super + c
-	rofi -show calc -modi calc -no-show-match -no-sort -theme $HOME/.config/rofi/launcher/style.rasi
+	rofi -show calc -modi calc -no-show-match -no-sort -theme $HOME/.config/rofi/launchers/style.rasi
 
 # Emoji Support
 alt + e 
@@ -101,7 +108,7 @@ alt + e
 
 # Logout Menu (sysact)
 super + shift + BackSpace
-	$HOME/Software/scripts/rofi/powermenu
+	bash $HOME/.config/rofi/powermenu/powermenu.sh
 
 # Reload sxhkd:
 super + shift + s
@@ -110,6 +117,10 @@ super + shift + s
 # Hide Polybar
 super + b
     polybar-msg cmd toggle
+
+# Restart Polybar
+super + control + p
+	.config/polybar/launch.sh &
 
 # Picom Toggle
 super + alt + o
@@ -159,9 +170,13 @@ XF86MonBrightnessDown
 
 #---------------------------------- BSPWM Key Bindings -----------------------------------------------
 
-# Quit/Restart bspwm 
-super + shift + {q,r} 	
-	bspc {quit,wm -r}
+# Restart bspwm 
+super + shift + r 	
+	bspc wm -r
+
+# Quit BSPWM
+super + shift + q
+	prompt "Are you sure you would like to quit this Xsession" "bspc quit"
 
 # Quit a Window
 super + q
