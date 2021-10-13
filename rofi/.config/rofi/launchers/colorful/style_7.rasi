@@ -8,9 +8,9 @@
  */
 
 configuration {
-	font:							"Iosevka Nerd Font 10";
+	font:							"JetBrains Mono Medium 10";
     show-icons:                     true;
-	icon-theme: 					"Papirus";
+	icon-theme: 					"candy-icons";
     display-drun: 					"";
     drun-display-format:            "{name}";
     disable-history:                false;
@@ -25,10 +25,11 @@ window {
     transparency:                   "real";
     background-color:               @bg;
     text-color:                     @fg;
-	border:							0px;
+	border:							2px;
 	border-color:					@ac;
     border-radius:                  12px;
-	width:							35%;
+	width:							40%;
+	height:							55%;
     location:                       center;
     x-offset:                       0;
     y-offset:                       0;
@@ -83,7 +84,7 @@ mainbox {
 	border-color:					@ac;
     children:                       [ inputbar, listview ];
     spacing:                       	0%;
-    padding:                        0%;
+    padding:                        6;
 }
 
 element {
@@ -107,9 +108,9 @@ element-text {
 }
 
 element selected {
-    background-color:               @ac;
-    text-color:                     @bg;
+    background-color:               @se;
+    text-color:                     @fg;
 	border:							0% 0% 0% 0%;
     border-radius:                  12px;
-    border-color:                  	@bg;
+    border-color:                  	@se;
 }

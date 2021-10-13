@@ -1,9 +1,11 @@
 typeset -U PATH path
 path=( "/bin" "/usr/bin" "/usr/local/bin" "$HOME/.local/bin" "$HOME/.bin" "$HOME/.npm-global/")
-export PATH
 
-export PATH="$HOME/.npm-global/bin:$PATH"
+PATH="$HOME/.npm-global/bin:$PATH"
+PATH="/home/shivam/.local/share/solana/install/active_release/bin:$PATH"
 export NPM_CONFIG_PREFIX=~/.npm-global
+
+export PATH
 
 export WINIT_HIDPI_FACTOR=1.0
 export EDITOR="nvim"

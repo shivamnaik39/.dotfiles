@@ -189,7 +189,7 @@ alias scr='systemctl restart'
 alias scs='systemctl stop'
 
 # protonvpn cli
-alias pvc='sudo protonvpn c'
+alias pvc='sudo protonvpn connect --cc NL'
 alias pvd='sudo protonvpn d'
 
 #neofetch

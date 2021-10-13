@@ -4,7 +4,7 @@
     "editor.tabSize": 2,
     "liveServer.settings.CustomBrowser": "brave",
     "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.html-language-features"
     },
     "terminal.integrated.fontFamily": "Fira Code, FontAwesome",
     "terminal.integrated.fontSize": 16,
@@ -72,4 +72,10 @@
         "editor.defaultFormatter": "ms-vscode.cpptools"
     },
     "security.workspace.trust.untrustedFiles": "open",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
 }

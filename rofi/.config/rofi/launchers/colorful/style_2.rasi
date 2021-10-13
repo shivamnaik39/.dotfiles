@@ -10,7 +10,7 @@
 configuration {
 	font:							"Iosevka Nerd Font 10";
     show-icons:                     true;
-	icon-theme: 					"Papirus";
+	icon-theme: 					"candy-icons";
     display-drun: 					"";
     drun-display-format:            "{name}";
     disable-history:                false;
@@ -25,7 +25,7 @@ window {
     transparency:                   "real";
     background-color:               @bg;
     text-color:                     @fg;
-	border:							0px;
+	border:							3px;
 	border-color:					@ac;
     border-radius:                  12px;
 	width:							20%;
