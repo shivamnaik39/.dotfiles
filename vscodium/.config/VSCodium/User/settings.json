@@ -4,7 +4,7 @@
     "editor.tabSize": 2,
     "liveServer.settings.CustomBrowser": "brave",
     "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "terminal.integrated.fontFamily": "Fira Code, FontAwesome",
     "terminal.integrated.fontSize": 16,
@@ -20,7 +20,7 @@
     ],
     "editor.wordWrap": "on",
     "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "lonefy.vscode-JS-CSS-HTML-formatter"
     },
     "liveServer.settings.ChromeDebuggingAttachment": false,
     "liveServer.settings.ignoreFiles": [
@@ -29,9 +29,7 @@
         "**/*.sass",
         "**/*.ts"
     ],
-    "workbench.iconTheme": "material-icon-theme",
     "prettier.useTabs": true,
-    "workbench.colorTheme": "Nord",
     "code-runner.preserveFocus": false,
     "code-runner.runInTerminal": true,
     "code-runner.saveAllFilesBeforeRun": true,
@@ -77,5 +75,19 @@
         "**/.project": true,
         "**/.settings": true,
         "**/.factorypath": true
+    },
+    "redhat.telemetry.enabled": false,
+    "workbench.colorTheme": "Material Theme Ocean High Contrast",
+    "workbench.iconTheme": "material-icon-theme",
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "window.zoomLevel": 1,
+    "editor.formatOnSave": true,
+    "editor.unicodeHighlight.allowedCharacters": {
+        "​": true
     },
 }

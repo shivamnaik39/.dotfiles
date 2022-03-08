@@ -1,173 +1,3 @@
-# ---------------------------- GUI Applications ---------------------------------------------
-
-# Terminal Emulator
-super + Return
-	$TERMINAL 
-
-super + alt + Return
-	tdrop -ma -w 60% -h 60% -x 20% -y 20% alacritty
-
-# Menu
-# Dmenu
-super + alt + d
-	dmenu_run -fn "JetBrains Mono Medium-10"
-
-# Rofi
-super + d
-	bash $HOME/.config/rofi/launchers/colorful/launcher.sh	
-
-# Web Browsers
-super + alt + w
-	$BROWSER
-
-# Graphics
-super + alt + {i,g}
-	{inkscape,gimp}
-
-# Development
-super + alt + {v}
-	{vscodium}
-
-# Pamac Manager
-super + alt + p
-	pamac-manager
-
-# Graphical File Manager
-super + alt + r
-	$GFILE	
-
-# -------------------------------------------------------------------------------------------------
-
-# ------------------------------------- CLI Applications ------------------------------------------
-
-# File Manager
-super + r
-	$TERMINAL -e $TFILE
-
-# HTOP
-super + s
-	$TERMINAL -e htop
-
-# nmtui (network manager client)
-super + shift + w
-	$TERMINAL -e nmtui
-
-# -------------------------------------------------------------------------------------------------
-
-#--------------------------------- Utilities --------------------------------------------------
-
-# Lockscreen
-alt + l
-	betterlockscreen -l dim --off 60 
-
-# Disable auto screen lock
-super + z
-	toggle xautolock
-
-
-# Screenshot (flameshot)
-# Toggle Flameshot
-shift + Print
-	toggle flameshot
-
-# Capture Partial Screenshot
-Print
-	flameshot gui
-
-# Capture Full Screenshot
-super Print
-	flameshot gui
-
-# Clipboard Manager (Parclllite)
-super + Insert
-	toggle parcellite
-
-# Toggle Network Manager Applet
-super + alt + n
-	 toggle nm-applet
-
-# Xkill
-super + Escape
-	xkill
-
-# Bluetooth Manager 
-super + alt + b
-	blueberry
-
-# Task Manager
-super + alt + t
-	xfce4-taskmanager
-
-# Calculator
-super + c
-	rofi -show calc -modi calc -no-show-match -no-sort -theme $HOME/.config/rofi/launchers/style.rasi
-
-# Emoji Support
-alt + e 
-	dmenuunicode
-
-# Logout Menu (sysact)
-super + shift + BackSpace
-	bash $HOME/.config/rofi/powermenu/powermenu.sh
-
-# Reload sxhkd:
-super + shift + s
-	pkill -USR1 -x sxhkd
-
-# Hide Polybar
-super + b
-    polybar-msg cmd toggle
-
-# Restart Polybar
-super + control + p
-	.config/polybar/launch.sh &
-
-# Picom Toggle
-super + alt + o
-	toggle picom
-
-#------------------------------------------ Controls -----------------------------------------------------
-
-# Screen Brightness
-super + {XF86AudioRaiseVolume,XF86AudioLowerVolume}
-	light -{A,U} 5
-
-# Raises volume
-XF86AudioRaiseVolume
-    amixer set Master 5%+
-
-# Lowers volume
-XF86AudioLowerVolume
-    amixer set Master 5%-
-
-# Mute
-XF86AudioMute
-    amixer -D pulse set Master 1+ toggle
-
-#PLAY
-XF86AudioPlay
-    playerctl play-pause
-
-#Next
-XF86AudioNext
-    playerctl next
-
-#previous
-XF86AudioPrev
-    playerctl previous
-
-#Stop
-XF86AudioStop
-    playerctl stop
-
-#Brightness up
-XF86MonBrightnessUp
-    xbacklight -inc 10
-
-#Brightness down
-XF86MonBrightnessDown
-    xbacklight -dec 10
-
 #---------------------------------- BSPWM Key Bindings -----------------------------------------------
 
 # Restart bspwm 
@@ -176,7 +6,7 @@ super + shift + r
 
 # Quit BSPWM
 super + shift + q
-	prompt "Are you sure you would like to quit this Xsession" "bspc quit"
+	bspc quit
 
 # Quit a Window
 super + q
@@ -287,5 +117,181 @@ super + shift + Right
 
 
 
+# ---------------------------- GUI Applications ---------------------------------------------
 
+# Terminal Emulator
+super + Return
+	$TERMINAL 
+
+super + alt + Return
+	tdrop -ma -w 60% -h 60% -x 20% -y 20% alacritty
+
+# Menu
+# Dmenu
+super + alt + d
+	dmenu_run -fn "JetBrains Mono Medium-10"
+
+# Rofi
+super + d
+	bash $HOME/.config/rofi/launchers/colorful/launcher.sh	
+
+# Web Browsers
+super + alt + w
+	$BROWSER
+
+# Graphics
+super + alt + {i,g}
+	{inkscape,gimp}
+
+# Development
+super + alt + {v}
+	{vscodium}
+
+# Pamac Manager
+super + alt + p
+	pamac-manager
+
+# Graphical File Manager
+super + alt + r
+	$GFILE	
+
+# -------------------------------------------------------------------------------------------------
+
+# ------------------------------------- CLI Applications ------------------------------------------
+
+# File Manager
+super + r
+	$TERMINAL -e $TFILE
+
+# HTOP
+super + {_,alt} + s
+	$TERMINAL -e {htop,bpytop}
+
+# nmtui (network manager client)
+super + shift + w
+	$TERMINAL -e nmtui
+
+# -------------------------------------------------------------------------------------------------
+
+#--------------------------------- Utilities --------------------------------------------------
+
+# Lockscreen
+alt + l
+	betterlockscreen -l dim --off 60 
+
+# Disable auto screen lock
+super + z
+	toggle xautolock
+
+
+# Screenshot (flameshot)
+# Toggle Flameshot
+shift + Print
+	toggle flameshot
+
+# Capture Partial Screenshot
+Print
+	flameshot gui
+
+# Capture Full Screenshot
+super Print
+	flameshot gui
+
+# Clipboard Manager (Parclllite)
+super + Insert
+	toggle parcellite
+
+# Toggle Network Manager Applet
+super + alt + n
+	 toggle nm-applet
+
+# Xkill
+super + Escape
+	xkill
+
+# Bluetooth Manager 
+super + alt + b
+	blueberry
+
+# Task Manager
+super + alt + t
+	xfce4-taskmanager
+
+# Calculator
+super + c
+	rofi -show calc -modi calc -no-show-match -no-sort -theme $HOME/.config/rofi/launchers/style.rasi
+
+# Emoji Support
+alt + e 
+	dmenuunicode
+
+# Logout Menu (sysact)
+super + shift + BackSpace
+	bash $HOME/.config/rofi/powermenu/powermenu.sh
+
+# Reload sxhkd:
+super + shift + s
+	pkill -USR1 -x sxhkd
+
+# Hide Polybar
+super + b
+    polybar-msg cmd toggle
+
+# Restart Polybar
+super + control + p
+	.config/polybar/launch.sh &
+
+# Picom Toggle
+super + alt + o
+	toggle picom
+
+#------------------------------------------ Controls -----------------------------------------------------
+
+# Screen Brightness
+super + {F2,F3}
+	light -{U,A} 5
+
+
+# volume
+super + {F6,F7}
+	amixer set Master 5%{-,+}
+
+super + F5
+	amixer -D pulse set Master 1+ toggle
+
+# Raises volume
+XF86AudioRaiseVolume
+	amixer set Master 5%+
+
+# Lowers volume
+XF86AudioLowerVolume
+     amixer set Master 5%-
+
+# Mute
+XF86AudioMute
+     amixer -D pulse set Master 1+ toggle
+
+#PLAY
+XF86AudioPlay
+    playerctl play-pause
+
+#Next
+XF86AudioNext
+    playerctl next
+
+#previous
+XF86AudioPrev
+    playerctl previous
+
+#Stop
+XF86AudioStop
+    playerctl stop
+
+#Brightness up
+XF86MonBrightnessUp
+    xbacklight -inc 10
+
+#Brightness down
+XF86MonBrightnessDown
+    xbacklight -dec 10
 

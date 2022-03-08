@@ -6,7 +6,7 @@ include-file = $HOME/.config/polybar/include-modules.ini
 
 [bar/main]
 width = 100%
-height = 23
+height = 25
 offset-y = 0
 bottom = false
 fixed-center = true
@@ -30,7 +30,7 @@ include-file = $HOME/.config/polybar/fonts.ini
 
 modules-left = bspwm
 modules-center =  round-left wired wlan round-right margin
-modules-right =  margin round-left memory cpu pulseaudio backlight battery arch-aur-updates round-right margin  round-left date round-right margin 
+modules-right =  margin round-left battery pulseaudio backlight memory cpu temperature arch-aur-updates round-right margin  round-left date round-right margin 
 
 tray-background = ${colors.bg-alt}
 tray-position = right

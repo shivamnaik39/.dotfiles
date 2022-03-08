@@ -16,9 +16,12 @@ alias pdw="pwd"
 # some core util aliases
 alias cat='bat'
 
+alias downgrade='sudo downgrade'
+
 #pacman and paru
 alias update='sudo pacman -Syu'
 alias updatef='sudo pacman -Syyu'
+alias updatep='sudo pacman -Sy && sudo powerpill -Su && paru -Su'
 alias search='pacman -Ss'
 alias install='sudo pacman -S'
 alias intallf='sudo pacman -Sy'
@@ -89,7 +92,7 @@ alias trizenskip='trizen -S --skipinteg'
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 
 #get fastest mirrors in your neighborhood
-alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirror="sudo reflector --latest 20 --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist"
 alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
 alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
 alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
@@ -187,9 +190,12 @@ alias gf='git fetch'
 alias sct='systemctl start'
 alias scr='systemctl restart'
 alias scs='systemctl stop'
+alias scst='systemctl status'
 
 # protonvpn cli
-alias pvc='sudo protonvpn connect --cc NL'
+alias pvc='sudo protonvpn  c -f'
 alias pvd='sudo protonvpn d'
+alias pvj='sudo protonvpn c --cc JP'
+
 
 #neofetch
